@@ -16,6 +16,12 @@ export interface Message {
 export interface Adapter {
    sourceName: string;
    filter: (fileName: string) => boolean;
-   process: (fileText: string) => Message[];
+   process: (fileText: string) => (Message | null)[];
    parse: (msg: any) => Message | null;
+}
+
+export interface Person {
+   name: string;
+   email: string[];
+   phone: string[];
 }

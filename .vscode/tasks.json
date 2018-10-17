@@ -1,0 +1,44 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Test",
+         "command": "./node_modules/.bin/jest",
+         "type": "shell",
+         "group": "test",
+         "problemMatcher": []
+      },
+      {
+         "label": "Build and Watch",
+         "group": "build",
+         "command": "./node_modules/.bin/tsc",
+         "args": ["-w"],
+         "type": "shell",
+         "problemMatcher": "$tsc"
+      },
+      {
+         "label": "Run",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "command": "./node_modules/.bin/ts-node",
+         "args": ["./lib/main.ts", "some path"],
+         "type": "shell",
+         "problemMatcher": "$tsc"
+      },
+      {
+         "label": "List Production Dependencies",
+         "command": "npm",
+         "args": ["ls", "-prod=true"],
+         "type": "shell",
+         "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": true,
+            "panel": "shared"
+         },
+         "problemMatcher": []
+      }
+   ]
+}

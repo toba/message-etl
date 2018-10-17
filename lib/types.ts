@@ -10,10 +10,12 @@ export interface Message {
    on: Date;
    subject?: string;
    source: Source;
+   text: string | null;
 }
 
 export interface Adapter {
+   sourceName: string;
    filter: (fileName: string) => boolean;
-   process: (path: string) => Message[];
-   source: Source;
+   process: (fileText: string) => Message[];
+   parse: (msg: any) => Message | null;
 }

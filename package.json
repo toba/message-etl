@@ -21,7 +21,8 @@
    },
    "homepage": "https://github.com/toba/message-etl#readme",
    "dependencies": {
-      "@toba/tools": "^3.12.0"
+      "@toba/tools": "^3.12.0",
+      "node-html-parser": "^1.1.10"
    },
    "devDependencies": {
       "@toba/build": "^1.7.4",

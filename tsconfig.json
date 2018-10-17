@@ -1,6 +1,8 @@
 {
    "extends": "./node_modules/@toba/build/ts/config",
    "compilerOptions": {
+      "jsx": "preserve",
+      "lib": ["dom", "es2017"],
       "strictNullChecks": true
    }
 }

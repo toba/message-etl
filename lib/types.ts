@@ -4,6 +4,11 @@ export enum Source {
    GMail
 }
 
+export const Relation: { [key: string]: number } = {
+   Self: 1,
+   Other: 2
+};
+
 export interface Message {
    from: string;
    to: string;
@@ -22,6 +27,11 @@ export interface Adapter {
 
 export interface Person {
    name: string;
+   alias: string[];
    email: string[];
    phone: string[];
 }
+
+type RelationKey = keyof Relation;
+
+export type People = { [key: RelationValue]: Person };

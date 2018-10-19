@@ -1,7 +1,7 @@
 import { is } from '@toba/tools';
 import { parse as parseHTML, HTMLElement } from 'node-html-parser';
 import { Adapter, Message, Source } from '../types';
-import { defaultSender } from '../config';
+import { match } from '../matcher';
 
 const re = /^(?! -).* - (Voicemail|Text) - \d{4}-\d{2}-\d{2}T\d{2}_(\d{2}_\d{2})?\.html$/;
 
@@ -27,7 +27,7 @@ export function nodeValue(
 
 function parse(el: HTMLElement): Message | null {
    const time = nodeValue(el, '.dt', 'title');
-   const from = nodeValue(el, '.sender .fn');
+   const from = match.name(nodeValue(el, '.sender .fn'));
    const tel = nodeValue(el, '.sender .tel', 'href');
    const text = nodeValue(el, 'q');
 

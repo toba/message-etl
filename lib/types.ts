@@ -32,6 +32,4 @@ export interface Person {
    phone: string[];
 }
 
-type RelationKey = keyof Relation;
-
-export type People = { [key: RelationValue]: Person };
+export type People = { [key: number]: Person };

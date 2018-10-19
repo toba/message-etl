@@ -1,5 +1,5 @@
 import { is } from '@toba/tools';
-import { people } from './config/';
+import { people } from './config';
 import { Person } from './types';
 
 function nameMatch(
@@ -28,7 +28,10 @@ export const match = {
 
    /** Find person with phone number */
    phone: (phone: string | null) =>
-      nameMatch(phone, p => p.phone.includes(phone!.replace(/\D/g, ''))),
+      nameMatch(phone, p => {
+         const num = phone!.replace(/\D/g, '');
+         return p.phone.find(p => num.includes(p)) !== undefined;
+      }),
 
    /** Find person with relation type */
    relation: (r: number): string | null => {

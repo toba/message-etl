@@ -6,7 +6,7 @@ import { Source, Relation } from '../types';
 
 jest.mock('../config/index');
 
-const name = 'Anybody Hyphen-Name';
+const name = 'Other Hyphen-Name';
 const raw = `<div class="message">
    <abbr class="dt" title="2013-06-17T20:46:00.861-04:00">Jun 17, 2013, 8:46:00 PM Eastern Time</abbr>:
       <cite class="sender vcard">

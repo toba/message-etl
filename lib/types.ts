@@ -11,17 +11,29 @@ export enum Relation {
 }
 
 export interface Message {
+   /** Who sent the message. */
    from: Relation;
+   /** When the message was sent. */
    on: Date;
    subject?: string;
+   /** The platform used to convey the message. */
    source: Source;
+   /** Contentof the message. */
    text: string | null;
+   /** An emoji reaction. */
+   reaction?: string;
 }
 
+/**
+ * Methods to process and parse messages from a particular platform.
+ */
 export interface Adapter {
    sourceName: string;
+   /** Filter file list so it only includes those for the platform. */
    filter: (fileName: string) => boolean;
+   /** Process an exported file. */
    process: (fileText: string) => Message[];
+   /** Parse a single message from the exported file. */
    parse: (msg: any) => Message | null;
 }
 
@@ -69,7 +81,11 @@ export namespace Facebook {
       name: string;
    }
 
-   export interface MessageExport {
+   /**
+    * Exported Facebook Messenger data. Export files are per-conversation.
+    * @see https://www.facebook.com/help/1701730696756992?helpref=hc_global_nav
+    */
+   export interface Conversation {
       participants: Participant[];
       messages: Message[];
       title: string;

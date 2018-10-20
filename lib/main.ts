@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { is } from '@toba/tools';
 import { Message } from './types';
-import { fb, gv, mb } from './adapters/index';
+import { fb, gv, mb } from './inputs/index';
 
 function main(path: string) {
    if (is.empty(path)) {

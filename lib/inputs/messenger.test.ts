@@ -22,6 +22,29 @@ test('converts standard message', () => {
    expect(fb.parse(source)).toEqual(target);
 });
 
+test('converts reations', () => {
+   const source: Facebook.Message = {
+      sender_name: 'Self Person',
+      timestamp_ms: 1539657593609,
+      content: 'Cats new hiding spot',
+      reactions: [
+         {
+            reaction: '\u00f0\u009f\u0098\u0086',
+            actor: 'Other Person'
+         }
+      ],
+      type: 'Generic'
+   };
+   const target: Message = {
+      source: Source.FacebookMessenger,
+      from: Relation.Self,
+      text: source.content,
+      on: new Date(source.timestamp_ms),
+      reaction: '😆'
+   };
+   expect(fb.parse(source)).toEqual(target);
+});
+
 test('converts photo message', () => {
    const source: Facebook.Message = {
       sender_name: 'Self Person',

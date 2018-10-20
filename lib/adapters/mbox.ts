@@ -1,21 +1,24 @@
-import { Adapter, Message, Source } from '../types';
+import { Adapter, Message, Source, Relation } from '../types';
 
 const re = /[Z0-9]\.html$/;
+
+function parse(msg: string): Message | null {
+   return {
+      source: Source.GoogleVoice,
+      from: Relation.Self,
+      on: new Date(),
+      text: msg
+   };
+}
 
 export const mailbox: Adapter = {
    filter: (fileName: string) => re.test(fileName),
 
    process(text: string) {
-      return [
-         {
-            source: Source.GoogleVoice,
-            from: 'from',
-            to: 'to',
-            on: new Date(),
-            text
-         }
-      ] as Message[];
+      return [] as Message[];
    },
+
+   parse,
 
    sourceName: 'Google Mail'
 };

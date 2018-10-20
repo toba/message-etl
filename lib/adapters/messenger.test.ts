@@ -1,6 +1,6 @@
 import '@toba/test';
 import { readFileText } from '@toba/test';
-import { facebookMessenger as fb } from './messenger';
+import { fb } from './index';
 import { Source, Relation, Message, Facebook } from '../types';
 
 jest.mock('../config/index');
@@ -42,6 +42,6 @@ test('converts photo message', () => {
       text: source.content,
       on: new Date(source.timestamp_ms)
    };
-
+   // https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/44421673_282973895759309_2240446406940688384_n.jpg?_nc_cat=110&_nc_ht=scontent-sea1-1.xx&oh=c0381320ba6fdce9117a3ec9c65e5295&oe=5C41F255
    expect(fb.parse(source)).toEqual(target);
 });

@@ -1,7 +1,7 @@
 import '@toba/test';
 import { readFileText } from '@toba/test';
 import { parse as parseHTML } from 'node-html-parser';
-import { googleVoice as gv } from './google-voice';
+import { gv } from './index';
 import { Source, Relation } from '../types';
 
 jest.mock('../config/index');

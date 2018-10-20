@@ -1,9 +1,7 @@
 import * as fs from 'fs';
 import { is } from '@toba/tools';
 import { Message } from './types';
-import { facebookMessenger } from './adapters/messenger';
-import { googleVoice } from './adapters/google-voice';
-import { mailbox } from './adapters/mbox';
+import { fb, gv, mb } from './adapters/index';
 
 function main(path: string) {
    if (is.empty(path)) {
@@ -16,9 +14,9 @@ function main(path: string) {
       if (is.value(err)) {
          fail(err);
       }
-      [facebookMessenger, googleVoice, mailbox].forEach(a => {
+      [fb, gv, mb].forEach(a => {
          messages.concat(
-            fileNames
+            ...fileNames
                .filter(f => a.filter(f))
                .map(f => a.process(fs.readFileSync(f, 'utf8')))
          );

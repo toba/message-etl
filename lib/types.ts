@@ -4,11 +4,6 @@ export enum Source {
    GMail
 }
 
-// export const Relation: { [key: string]: number } = {
-//    Self: 1,
-//    Other: 2
-// };
-
 export enum Relation {
    None = 0,
    Self,
@@ -38,3 +33,48 @@ export interface Person {
 }
 
 export type People = { [key: number]: Person };
+
+export namespace Facebook {
+   export interface Reaction {
+      /** Emoji */
+      reaction: string;
+      /** Person's name */
+      actor: string;
+   }
+
+   export interface Link {
+      uri: string;
+   }
+
+   export interface MediaLink extends Link {
+      creation_timestamp: number;
+   }
+
+   export interface VideoLink extends MediaLink {
+      thumbnail: Link;
+   }
+
+   export interface Message {
+      sender_name: string;
+      timestamp_ms: number;
+      content: string;
+      type: 'Generic';
+      sticker?: Link;
+      videos?: VideoLink[];
+      photos?: MediaLink[];
+      reactions?: Reaction[];
+   }
+
+   interface Participant {
+      name: string;
+   }
+
+   export interface MessageExport {
+      participants: Participant[];
+      messages: Message[];
+      title: string;
+      is_still_participant: boolean;
+      thread_type: string;
+      thread_path: string;
+   }
+}

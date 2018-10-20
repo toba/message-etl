@@ -5,6 +5,7 @@ jest.mock('./config/index');
 
 test('matches name', () => {
    expect(match.name('Self Person')).toBe('Self');
+   expect(match.name('Me')).toBe('Self');
    expect(match.name('Other Hyphen-Name')).toBe('Other');
 });
 

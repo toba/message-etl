@@ -4,6 +4,8 @@ import { parse as parseHTML } from 'node-html-parser';
 import { googleVoice as gv } from './google-voice';
 import { Source } from '../types';
 
+jest.mock('../config/index');
+
 const name = 'Anybody Hyphen-Name';
 const raw = `<div class="message">
    <abbr class="dt" title="2013-06-17T20:46:00.861-04:00">Jun 17, 2013, 8:46:00 PM Eastern Time</abbr>:
@@ -40,11 +42,10 @@ test('parses single message', () => {
 
    expect(msg).toEqual({
       source: Source.GoogleVoice,
-      from: 'First Last-Hyphen',
-      to: null,
-      on: new Date(2013, 5, 17, 18, 46),
-      text:
-         'Flight 2244, 15 minutes delayed, also had to check in bag because Carolyn bought Kayla and I stuff from bath & body works'
+      from: 'Other',
+      on: new Date(2013, 5, 17, 18, 46, 0, 861),
+      text: `Flight 2244, 15 minutes delayed, also had to check in bag because Carolyn bought Kayla and I stuff from bath
+      & body works`
    });
 });
 

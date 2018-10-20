@@ -11,7 +11,6 @@ export const Relation: { [key: string]: number } = {
 
 export interface Message {
    from: string;
-   to: string;
    on: Date;
    subject?: string;
    source: Source;

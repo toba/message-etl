@@ -5,26 +5,31 @@ import { match } from '../matcher';
 
 const re = /^(?! -).* - (Voicemail|Text) - \d{4}-\d{2}-\d{2}T\d{2}_(\d{2}_\d{2})?\.html$/;
 
+/**
+ * Value of an element: either it's text content or an attribute value.
+ */
 export function nodeValue(
-   el: HTMLElement,
+   element: HTMLElement,
    selector: string,
    attribute: string | null = null
 ): string | null {
-   const thing = el.querySelector(selector) as HTMLElement;
+   const el = element.querySelector(selector) as HTMLElement;
 
-   if (is.value(thing)) {
+   if (is.value(el)) {
       if (attribute !== null) {
-         if (is.defined(thing.attributes, attribute)) {
-            return thing.attributes[attribute];
+         if (is.defined(el.attributes, attribute)) {
+            return el.attributes[attribute];
          }
       } else {
-         return thing.innerHTML;
+         return el.innerHTML;
       }
    }
-
    return null;
 }
 
+/**
+ * Parse single messsage.
+ */
 function parse(el: HTMLElement): Message | null {
    const time = nodeValue(el, '.dt', 'title');
    const from = match.name(nodeValue(el, '.sender .fn'));
@@ -35,7 +40,6 @@ function parse(el: HTMLElement): Message | null {
       ? {
            source: Source.GoogleVoice,
            from,
-           to: defaultSender.name,
            on: new Date(time),
            text
         }
@@ -45,6 +49,9 @@ function parse(el: HTMLElement): Message | null {
 export const googleVoice: Adapter = {
    filter: (fileName: string) => re.test(fileName),
 
+   /**
+    * Process exported file.
+    */
    process(fileText: string) {
       const html = parseHTML(fileText);
       const messages = html.querySelectorAll('.hChatLog .message');

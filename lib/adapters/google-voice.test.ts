@@ -2,7 +2,7 @@ import '@toba/test';
 import { readFileText } from '@toba/test';
 import { parse as parseHTML } from 'node-html-parser';
 import { googleVoice as gv } from './google-voice';
-import { Source } from '../types';
+import { Source, Relation } from '../types';
 
 jest.mock('../config/index');
 
@@ -42,7 +42,7 @@ test('parses single message', () => {
 
    expect(msg).toEqual({
       source: Source.GoogleVoice,
-      from: 'Other',
+      from: Relation.Other,
       on: new Date(2013, 5, 17, 18, 46, 0, 861),
       text: `Flight 2244, 15 minutes delayed, also had to check in bag because Carolyn bought Kayla and I stuff from bath
       & body works`
@@ -53,5 +53,9 @@ test('parses file', async () => {
    const text = await readFileText(`${__dirname}/__mocks__/sms.html`);
    const messages = gv.process(text);
 
-   expect(messages).toBeDefined();
+   expect(messages).toBeInstanceOf(Array);
+   expect(messages).toHaveLength(9);
+   expect(messages[0].from).toBe(Relation.Other);
+   expect(messages[1].from).toBe(Relation.Self);
+   expect(messages[8].text).toBe('Superman? Home in 15');
 });

@@ -4,13 +4,19 @@ export enum Source {
    GMail
 }
 
-export const Relation: { [key: string]: number } = {
-   Self: 1,
-   Other: 2
-};
+// export const Relation: { [key: string]: number } = {
+//    Self: 1,
+//    Other: 2
+// };
+
+export enum Relation {
+   None = 0,
+   Self,
+   Other
+}
 
 export interface Message {
-   from: string;
+   from: Relation;
    on: Date;
    subject?: string;
    source: Source;
@@ -20,7 +26,7 @@ export interface Message {
 export interface Adapter {
    sourceName: string;
    filter: (fileName: string) => boolean;
-   process: (fileText: string) => (Message | null)[];
+   process: (fileText: string) => Message[];
    parse: (msg: any) => Message | null;
 }
 

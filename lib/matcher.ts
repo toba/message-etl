@@ -1,41 +1,35 @@
 import { is } from '@toba/tools';
 import { people } from './config';
-import { Person } from './types';
+import { Person, Relation } from './types';
+import { numbersOnly } from './tools';
 
-function nameMatch(
+function compare(
    value: string | null,
    matcher: (p: Person) => boolean
-): string | null {
+): Relation {
    if (is.empty(value)) {
-      return null;
+      return Relation.None;
    }
    for (const key in people) {
-      const p = people[key];
-      if (matcher(p)) {
-         return p.name;
+      if (matcher(people[key])) {
+         return parseInt(key);
       }
    }
-   return null;
+   return Relation.None;
 }
 
 export const match = {
    /** Find person with name */
-   name: (name: string | null) => nameMatch(name, p => p.alias.includes(name!)),
+   name: (name: string | null) => compare(name, p => p.alias.includes(name!)),
 
    /** Find person with e-mail */
    email: (email: string | null) =>
-      nameMatch(email, p => p.email.includes(email!)),
+      compare(email, p => p.email.includes(email!)),
 
    /** Find person with phone number */
    phone: (phone: string | null) =>
-      nameMatch(phone, p => {
-         const num = phone!.replace(/\D/g, '');
-         return p.phone.find(p => num.includes(p)) !== undefined;
-      }),
-
-   /** Find person with relation type */
-   relation: (r: number): string | null => {
-      const p = people[r];
-      return is.value(p) ? p.name : null;
-   }
+      compare(phone, p => {
+         const num = numbersOnly(phone);
+         return p.phone.find(p => num!.includes(p)) !== undefined;
+      })
 };

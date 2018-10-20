@@ -2,6 +2,7 @@ import { is } from '@toba/tools';
 import { parse as parseHTML, HTMLElement } from 'node-html-parser';
 import { Adapter, Message, Source } from '../types';
 import { match } from '../matcher';
+import { numbersOnly } from '../tools';
 
 const re = /^(?! -).* - (Voicemail|Text) - \d{4}-\d{2}-\d{2}T\d{2}_(\d{2}_\d{2})?\.html$/;
 
@@ -33,7 +34,7 @@ export function nodeValue(
 function parse(el: HTMLElement): Message | null {
    const time = nodeValue(el, '.dt', 'title');
    const from = match.name(nodeValue(el, '.sender .fn'));
-   const tel = nodeValue(el, '.sender .tel', 'href');
+   const tel = numbersOnly(nodeValue(el, '.sender .tel', 'href'));
    const text = nodeValue(el, 'q');
 
    return time !== null && from !== null && tel !== null && text !== null
@@ -56,7 +57,9 @@ export const googleVoice: Adapter = {
       const html = parseHTML(fileText);
       const messages = html.querySelectorAll('.hChatLog .message');
       return is.array(messages)
-         ? messages.map(el => parse(el as HTMLElement)).filter(m => m !== null)
+         ? (messages
+              .map(el => parse(el as HTMLElement))
+              .filter(m => m !== null) as Message[])
          : [];
    },
 

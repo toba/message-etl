@@ -15,7 +15,7 @@ test('converts standard message', () => {
    const target: Message = {
       source: Source.FacebookMessenger,
       from: Relation.Other,
-      text: source.content,
+      text: 'SPOILED monster.',
       on: new Date(source.timestamp_ms)
    };
 

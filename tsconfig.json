@@ -3,6 +3,8 @@
    "compilerOptions": {
       "jsx": "preserve",
       "lib": ["dom", "es2017"],
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "noImplicitAny": false,
+      "typeRoots": ["./node_modules/@types/", "./lib/types/"]
    }
 }

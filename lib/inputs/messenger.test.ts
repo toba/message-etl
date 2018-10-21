@@ -1,5 +1,4 @@
 import '@toba/test';
-import { readFileText } from '@toba/test';
 import { fb } from './index';
 import { Source, Relation, Message, Facebook } from '../types';
 

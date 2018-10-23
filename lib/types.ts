@@ -18,7 +18,7 @@ export interface Message {
    subject?: string;
    /** The platform used to convey the message. */
    source: Source;
-   /** Contentof the message. */
+   /** Content of the message. */
    text: string | null;
    /** An emoji reaction. */
    reaction?: string;

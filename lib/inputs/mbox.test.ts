@@ -1,9 +1,10 @@
 import '@toba/test';
-import { mb } from './index';
-import { Source, Relation, Message } from '../types';
+import MBox = require('node-mbox');
 import { simpleParser, ParsedMail } from 'mailparser';
 import * as path from 'path';
-import MBox = require('node-mbox');
+import { mb } from './index';
+import { Source, Relation, Message } from '../types';
+import { mail as mockMail } from './__mocks__/mail';
 
 jest.mock('../config/index');
 

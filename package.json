@@ -22,6 +22,7 @@
    "homepage": "https://github.com/toba/message-etl#readme",
    "dependencies": {
       "@toba/tools": "^3.12.0",
+      "jsdom": "^12.2.0",
       "mailparser": "^2.3.4",
       "node-html-parser": "^1.1.10",
       "node-mbox": "^1.0.0"
@@ -29,6 +30,7 @@
    "devDependencies": {
       "@toba/build": "^1.7.4",
       "@toba/test": "^1.20.0",
+      "@types/jsdom": "^12.2.0",
       "@types/mailparser": "^2.0.2",
       "prettier": "^1.14.3",
       "ts-node": "^7.0.0",

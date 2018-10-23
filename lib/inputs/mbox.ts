@@ -1,5 +1,5 @@
 import { ParsedMail } from 'mailparser';
-import { Adapter, Message, Source } from '../types';
+import { Reader, Message, Source } from '../types';
 import { match } from '../matcher';
 
 const re = /[Z0-9]\.html$/;
@@ -13,7 +13,7 @@ function parse(msg: ParsedMail): Message | null {
    };
 }
 
-export const mailbox: Adapter = {
+export const mailbox: Reader = {
    filter: (fileName: string) => re.test(fileName),
 
    process(_text: string) {

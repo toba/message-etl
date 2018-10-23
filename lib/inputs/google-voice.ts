@@ -1,6 +1,6 @@
 import { is } from '@toba/tools';
 import { parse as parseHTML, HTMLElement } from 'node-html-parser';
-import { Adapter, Message, Source } from '../types';
+import { Reader, Message, Source } from '../types';
 import { match } from '../matcher';
 import { numbersOnly } from '../tools';
 
@@ -47,7 +47,7 @@ function parse(el: HTMLElement): Message | null {
       : null;
 }
 
-export const googleVoice: Adapter = {
+export const googleVoice: Reader = {
    filter: (fileName: string) => re.test(fileName),
 
    /**

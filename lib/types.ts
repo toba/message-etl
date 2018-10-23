@@ -27,7 +27,7 @@ export interface Message {
 /**
  * Methods to process and parse messages from a particular platform.
  */
-export interface Adapter {
+export interface Reader {
    sourceName: string;
    /** Filter file list so it only includes those for the platform. */
    filter: (fileName: string) => boolean;
@@ -35,6 +35,11 @@ export interface Adapter {
    process: (fileText: string) => Message[];
    /** Parse a single message from the exported file. */
    parse: (msg: any) => Message | null;
+}
+
+export interface Writer {
+   serialize: (m: Message) => string;
+   save: (messages: Message[]) => boolean;
 }
 
 export interface Person {

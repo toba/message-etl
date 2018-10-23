@@ -1,10 +1,15 @@
-import { Message } from '../types';
+import { Message, Writer } from '../types';
 
-export function save(messages: Message[]) {
-   messages.sort((m1, m2) => (m1.on > m2.on ? 1 : -1));
+export const serialize = (m: Message): string => `<div>${m.text}</div>`;
 
-   const list: string = messages.map(m => `<div>${m.text}</div>`).join('');
-   const html = `<!DOCTYPE html><html><body>${list}</body></html>`;
+export const html: Writer = {
+   save(messages: Message[]) {
+      messages.sort((m1, m2) => (m1.on > m2.on ? 1 : -1));
 
-   return html;
-}
+      const list: string = messages.map(serialize).join('');
+      const html = `<!DOCTYPE html><html><body>${list}</body></html>`;
+
+      return html != null;
+   },
+   serialize
+};

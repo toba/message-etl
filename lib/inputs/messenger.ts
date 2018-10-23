@@ -1,4 +1,4 @@
-import { Adapter, Message, Source, Facebook } from '../types';
+import { Reader, Message, Source, Facebook } from '../types';
 import { is } from '@toba/tools';
 import { match } from '../matcher';
 
@@ -27,7 +27,7 @@ function parse(msg: Facebook.Message): Message | null {
    return out;
 }
 
-export const facebookMessenger: Adapter = {
+export const facebookMessenger: Reader = {
    filter: (fileName: string) => fileName == 'message.json',
 
    process(text: string) {

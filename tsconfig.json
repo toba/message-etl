@@ -5,6 +5,7 @@
       "lib": ["dom", "es2017"],
       "strictNullChecks": true,
       "noImplicitAny": false,
-      "typeRoots": ["./node_modules/@types/", "./lib/types/"]
+      "typeRoots": ["./node_modules/@types/", "./lib/types/"],
+      "plugins": [{ "name": "typescript-tslint-plugin" }]
    }
 }

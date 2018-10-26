@@ -9,21 +9,16 @@
          "problemMatcher": []
       },
       {
-         "label": "Build and Watch",
-         "group": "build",
-         "command": "./node_modules/.bin/tsc",
-         "args": ["-w"],
-         "type": "shell",
-         "problemMatcher": "$tsc"
-      },
-      {
          "label": "Run",
          "group": {
             "kind": "build",
             "isDefault": true
          },
          "command": "./node_modules/.bin/ts-node",
-         "args": ["./lib/main.ts", "some path"],
+         "args": [
+            "./lib/main.ts",
+            "\"/Volumes/GoogleDrive/My Drive/Legal/Jessica/SMS/\""
+         ],
          "type": "shell",
          "problemMatcher": "$tsc"
       },

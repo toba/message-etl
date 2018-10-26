@@ -22,7 +22,26 @@ test('converts standard message', () => {
    expect(fb.parse(source)).toEqual(target);
 });
 
-test('converts reations', () => {
+test('converts weird message', () => {
+   const source: Facebook.Message = {
+      sender_name: 'Jason Abbott',
+      timestamp_ms: 1513267790291,
+      content: 'You\u00e2\u0080\u0099ll make it \u00f0\u009f\u00a4\u00a0',
+      type: 'Generic'
+   };
+
+   const target: Message = {
+      source: Source.FacebookMessenger,
+      from: Relation.Self,
+      text: source.content,
+      on: new Date(source.timestamp_ms),
+      reaction: '😆'
+   };
+
+   expect(fb.parse(source)).toEqual(target);
+});
+
+test('converts reactions', () => {
    const source: Facebook.Message = {
       sender_name: 'Self Person',
       timestamp_ms: 1539657593609,

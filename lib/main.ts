@@ -3,10 +3,10 @@ import * as path from 'path';
 import { is } from '@toba/tools';
 import { Message, Reader, Writer } from './types';
 import { fb, gv } from './inputs/index';
-import { delimited } from './outputs/index';
+import { text } from './outputs/index';
 
 const inputs: Reader[] = [fb, gv];
-const outputs: Writer[] = [delimited];
+const outputs: Writer[] = [text];
 
 function main(dir: string) {
    if (is.empty(dir)) {
@@ -36,7 +36,7 @@ function main(dir: string) {
       if (messages.length > 0) {
          console.log(`Parsed ${messages.length} messages`);
 
-         messages.sort((m1, m2) => (m1.on > m2.on ? 1 : -1));
+         messages.sort((m1, m2) => m1.on.getTime() - m2.on.getTime());
 
          outputs.forEach(o => {
             console.log(`Preparing to write ${o.fileName}`);

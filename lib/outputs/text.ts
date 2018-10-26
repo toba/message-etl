@@ -1,17 +1,32 @@
+import { timeString, dateString } from '@toba/tools';
 import { Message, Writer } from '../types';
+import { dayName, curlyQuotes } from '../tools';
+import { people } from '../config';
 
-export const serialize = (m: Message): string => `${m.on.getHours()}:${
-   m.on.getMinutes
-}
-   ${m.from}
-   ${m.text}`;
+export const serialize = (m: Message): string =>
+   '\t' +
+   timeString(m.on) +
+   '\t' +
+   people[m.from].name +
+   ':\t' +
+   curlyQuotes(m.text) +
+   '\n';
 
 export const text: Writer = {
    write(messages: Message[]) {
-      
+      let out = '';
+      let day = '';
 
-      const list: string = messages.map(serialize).join('\n');
-      return `<!DOCTYPE html><html><body>${list}</body></html>`;
+      messages.forEach(m => {
+         const monthDay = `${m.on.getMonth()}-${m.on.getDate()}`;
+         if (day != monthDay) {
+            day = monthDay;
+            out += `\n${dayName(m.on)}, ${dateString(m.on)}\n\n`;
+         }
+         out += serialize(m);
+      });
+
+      return out;
    },
    serialize,
    fileName: 'messages.txt'

@@ -1,171 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generates delimited file 1`] = `
-"<!DOCTYPE html><html><body><article>
-   <div>2</div>
-   <time>Tue Oct 16 2018 12:12:53 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Oh, I know what that means. Ok</p>
-</article><article>
-   <div>1</div>
-   <time>Tue Oct 16 2018 12:06:50 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Maybe I translated wrong. Full message: \\"Its 3160 Lewis River Rd Woodland Wa 98674 for know it will be changing when the new houses and road goes in don't when that will happen.\\"</p>
-</article><article>
-   <div>2</div>
-   <time>Tue Oct 16 2018 12:06:27 GMT-0600 (Mountain Daylight Time)</time>
-   <p>What do you mean not in the new place?</p>
-</article><article>
-   <div>2</div>
-   <time>Tue Oct 16 2018 12:05:57 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Jessica: 󰀀</p>
-</article><article>
-   <div>1</div>
-   <time>Sun Oct 14 2018 15:46:30 GMT-0600 (Mountain Daylight Time)</time>
-   <p>You sent a video.</p>
-</article><article>
-   <div>1</div>
-   <time>Tue Oct 16 2018 11:53:18 GMT-0600 (Mountain Daylight Time)</time>
-   <p>And he spelled \\"your\\" wrong</p>
-</article><article>
-   <div>1</div>
-   <time>Sat Oct 13 2018 15:12:46 GMT-0600 (Mountain Daylight Time)</time>
-   <p>You: 󰀀</p>
-</article><article>
-   <div>1</div>
-   <time>Tue Oct 16 2018 11:53:02 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Scott says the address is still 3160 Lewis River Rd. Not in the new place yet.</p>
-</article><article>
-   <div>2</div>
-   <time>Tue Oct 16 2018 09:51:34 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Rough</p>
-</article><article>
-   <div>1</div>
-   <time>Tue Oct 16 2018 09:45:52 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Went to make latte for first time ever here and we're out of milk. What a dump.</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 20:41:34 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Jessica: 󰀀</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 20:41:16 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Was on perch a while</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 20:41:08 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Mellow</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 20:41:05 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Seems to be</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 20:40:39 GMT-0600 (Mountain Daylight Time)</time>
-   <p>She feeling okay?</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 20:39:53 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Cats new hiding spot</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 20:39:45 GMT-0600 (Mountain Daylight Time)</time>
-   <p>You sent a photo.</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 19:24:44 GMT-0600 (Mountain Daylight Time)</time>
-   <p>So very sad</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 19:22:48 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Felt so sad going in his room to turn off the light, looking around</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 18:31:42 GMT-0600 (Mountain Daylight Time)</time>
-   <p>You: 󰀀</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 18:31:33 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Oh, I know it was 3160. I'll find out</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 18:30:32 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Meant as more of a question :)</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 18:29:29 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Thanks</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 18:27:50 GMT-0600 (Mountain Daylight Time)</time>
-   <p>3170 Lewis River Rd
-Woodland, WA 98674</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 18:27:49 GMT-0600 (Mountain Daylight Time)</time>
-   <p>The address I have is</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 16:48:19 GMT-0600 (Mountain Daylight Time)</time>
-   <p>You: 󰀀</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 16:47:12 GMT-0600 (Mountain Daylight Time)</time>
-   <p>I'll be by to get Hunter around 5:30</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 16:46:15 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Waiting in line for cat</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 13:56:54 GMT-0600 (Mountain Daylight Time)</time>
-   <p>yeah ...</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 13:56:35 GMT-0600 (Mountain Daylight Time)</time>
-   <p>no clue on the xbox, sold is probably a good bet. He can deal with Scott on that one</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 13:54:26 GMT-0600 (Mountain Daylight Time)</time>
-   <p>didn't see xbox anywhere. i guess he sold it? or I put it somewhere I totally forgot? but i don't think so. just had it in the office, locked.</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 13:53:40 GMT-0600 (Mountain Daylight Time)</time>
-   <p>checked his room. it seemed clean in the sense that there aren't clothes on the floor anymore.</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Oct 15 2018 13:53:14 GMT-0600 (Mountain Daylight Time)</time>
-   <p>If he's back by 4:30 and his room is clean and he's totally packed</p>
-</article><article>
-   <div>1</div>
-   <time>Mon Oct 15 2018 13:42:55 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Hunter wanting to go visit friends. I said to check with you.</p>
-</article><article>
-   <div>1</div>
-   <time>Sat Jun 22 2013 12:03:31 GMT-0600 (Mountain Daylight Time)</time>
-   <p>This is my route
-https://dl.dropboxusercontent.com/u/33199511/lava-mountain-loop.jpg</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Jun 10 2013 22:27:23 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Good night, sweet dreams reality is obviously not your forte.</p>
-</article><article>
-   <div>2</div>
-   <time>Mon Jun 10 2013 08:03:18 GMT-0600 (Mountain Daylight Time)</time>
-   <p>SPOILED monster.</p>
-</article><article>
-   <div>2</div>
-   <time>Sun Jun 09 2013 09:55:02 GMT-0600 (Mountain Daylight Time)</time>
-   <p>That is hilarious, we are all laughing. Hitting the road now</p>
-</article><article>
-   <div>2</div>
-   <time>Wed Feb 23 2011 21:47:01 GMT-0700 (Mountain Standard Time)</time>
-   <p>Do you ever have those moments where somebody is so mind shatteringly selfish and horrible that it may take you a few days to even  put the right words together, because it is so unfathomable for most of the population to be that way?? Yet they think they are logical and normal?? Even though everybody around them has to put effort into tolerating being around them??? No matter what damage they cause in their wake they will NEVER change anything or say they are sorry???</p>
-</article></body></html>"
+"
+Tuesday, October 16, 2018
+
+	12:12 PM	Other:	Oh, I know what that means. Ok
+	12:06 PM	Self:	Maybe I translated wrong. Full message: “Its 3160 Lewis River Rd Woodland Wa 98674 for know it will be changing when the new houses and road goes in don’t when that will happen.\\"
+	12:06 PM	Other:	What do you mean not in the new place?
+	12:05 PM	Other:	Jessica: 󰀀
+
+Sunday, October 14, 2018
+
+	3:46 PM	Self:	You sent a video.
+
+Tuesday, October 16, 2018
+
+	11:53 AM	Self:	And he spelled “your” wrong
+
+Saturday, October 13, 2018
+
+	3:12 PM	Self:	You: 󰀀
+
+Tuesday, October 16, 2018
+
+	11:53 AM	Self:	Scott says the address is still 3160 Lewis River Rd. Not in the new place yet.
+	9:51 AM	Other:	Rough
+	9:45 AM	Self:	Went to make latte for first time ever here and we’re out of milk. What a dump.
+
+Monday, October 15, 2018
+
+	8:41 PM	Other:	Jessica: 󰀀
+	8:41 PM	Self:	Was on perch a while
+	8:41 PM	Self:	Mellow
+	8:41 PM	Self:	Seems to be
+	8:40 PM	Other:	She feeling okay?
+	8:39 PM	Self:	Cats new hiding spot
+	8:39 PM	Self:	You sent a photo.
+	7:24 PM	Other:	So very sad
+	7:22 PM	Self:	Felt so sad going in his room to turn off the light, looking around
+	6:31 PM	Self:	You: 󰀀
+	6:31 PM	Other:	Oh, I know it was 3160. I’ll find out
+	6:30 PM	Self:	Meant as more of a question :)
+	6:29 PM	Other:	Thanks
+	6:27 PM	Self:	3170 Lewis River Rd
+Woodland, WA 98674
+	6:27 PM	Self:	The address I have is
+	4:48 PM	Self:	You: 󰀀
+	4:47 PM	Other:	I’ll be by to get Hunter around 5:30
+	4:46 PM	Self:	Waiting in line for cat
+	1:56 PM	Self:	yeah ...
+	1:56 PM	Other:	no clue on the xbox, sold is probably a good bet. He can deal with Scott on that one
+	1:54 PM	Self:	didn’t see xbox anywhere. i guess he sold it? or I put it somewhere I totally forgot? but i don’t think so. just had it in the office, locked.
+	1:53 PM	Self:	checked his room. it seemed clean in the sense that there aren’t clothes on the floor anymore.
+	1:53 PM	Other:	If he’s back by 4:30 and his room is clean and he’s totally packed
+	1:42 PM	Self:	Hunter wanting to go visit friends. I said to check with you.
+
+Saturday, June 22, 2013
+
+	12:03 PM	Self:	This is my route
+https://dl.dropboxusercontent.com/u/33199511/lava-mountain-loop.jpg
+
+Monday, June 10, 2013
+
+	10:27 PM	Other:	Good night, sweet dreams reality is obviously not your forte.
+	8:03 AM	Other:	SPOILED monster.
+
+Sunday, June 9, 2013
+
+	9:55 AM	Other:	That is hilarious, we are all laughing. Hitting the road now
+
+Wednesday, February 23, 2011
+
+	9:47 PM	Other:	Do you ever have those moments where somebody is so mind shatteringly selfish and horrible that it may take you a few days to even  put the right words together, because it is so unfathomable for most of the population to be that way?? Yet they think they are logical and normal?? Even though everybody around them has to put effort into tolerating being around them??? No matter what damage they cause in their wake they will NEVER change anything or say they are sorry???
+"
 `;
 
 exports[`serializes message 1`] = `
-"<article>
-   <div>1</div>
-   <time>Thu Jun 12 2014 00:00:00 GMT-0600 (Mountain Daylight Time)</time>
-   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</article>"
+"	12:00 AM	Self:	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+"
 `;

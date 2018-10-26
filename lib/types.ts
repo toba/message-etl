@@ -39,7 +39,8 @@ export interface Reader {
 
 export interface Writer {
    serialize: (m: Message) => string;
-   save: (messages: Message[]) => boolean;
+   write: (messages: Message[]) => string;
+   fileName: string;
 }
 
 export interface Person {

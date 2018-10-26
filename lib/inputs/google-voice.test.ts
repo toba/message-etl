@@ -58,4 +58,6 @@ test('parses file', async () => {
    expect(messages[0].from).toBe(Relation.Other);
    expect(messages[1].from).toBe(Relation.Self);
    expect(messages[8].text).toBe('Superman? Home in 15');
+
+   expect(messages).toMatchSnapshot();
 });

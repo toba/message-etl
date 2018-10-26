@@ -1,4 +1,5 @@
 import '@toba/test';
+import { readFileText } from '@toba/test';
 import { fb } from './index';
 import { Source, Relation, Message, Facebook } from '../types';
 
@@ -66,4 +67,15 @@ test('converts photo message', () => {
    };
    // https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/44421673_282973895759309_2240446406940688384_n.jpg?_nc_cat=110&_nc_ht=scontent-sea1-1.xx&oh=c0381320ba6fdce9117a3ec9c65e5295&oe=5C41F255
    expect(fb.parse(source)).toEqual(target);
+});
+
+test('parses file', async () => {
+   const text = await readFileText(`${__dirname}/__mocks__/message.json`);
+   const messages = fb.process(text);
+
+   expect(messages).toBeInstanceOf(Array);
+   expect(messages).toHaveLength(39);
+   expect(messages[0].from).toBe(Relation.Other);
+   expect(messages[1].from).toBe(Relation.Self);
+   expect(messages).toMatchSnapshot();
 });

@@ -7,13 +7,10 @@ export const serialize = (m: Message): string => `<article>
 </article>`;
 
 export const html: Writer = {
-   save(messages: Message[]) {
-      messages.sort((m1, m2) => (m1.on > m2.on ? 1 : -1));
-
+   write(messages: Message[]) {
       const list: string = messages.map(serialize).join('');
-      const html = `<!DOCTYPE html><html><body>${list}</body></html>`;
-
-      return html != null;
+      return `<!DOCTYPE html><html><body>${list}</body></html>`;
    },
-   serialize
+   serialize,
+   fileName: 'messages.html'
 };

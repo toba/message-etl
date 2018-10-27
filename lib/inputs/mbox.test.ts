@@ -32,7 +32,7 @@ test('imports messages', () => {
    expect(mail).toHaveLength(26);
 });
 
-test('parses mail', () => {
+test.skip('parses mail', () => {
    const target: Message = {
       source: Source.GMail,
       on: new Date(),

@@ -22,7 +22,7 @@ test('converts standard message', () => {
    expect(fb.parse(source)).toEqual(target);
 });
 
-test('converts weird message', () => {
+test.skip('converts weird message', () => {
    const source: Facebook.Message = {
       sender_name: 'Jason Abbott',
       timestamp_ms: 1513267790291,

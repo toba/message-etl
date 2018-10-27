@@ -22,6 +22,7 @@
    "homepage": "https://github.com/toba/message-etl#readme",
    "dependencies": {
       "@toba/tools": "^3.12.0",
+      "fast-xml-parser": "^3.12.5",
       "mailparser": "^2.3.4",
       "node-html-parser": "^1.1.10",
       "node-mbox": "^1.0.0",

@@ -2,10 +2,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { is } from '@toba/tools';
 import { Message, Reader, Writer } from './types';
-import { fb, gv } from './inputs/index';
+import { fb, gv, passport, chat } from './inputs/index';
 import { text } from './outputs/index';
 
-const inputs: Reader[] = [fb, gv];
+const inputs: Reader[] = [fb, gv, passport, chat];
 const outputs: Writer[] = [text];
 
 function main(dir: string) {
@@ -29,7 +29,9 @@ function main(dir: string) {
          messages = messages.concat(
             ...fileNames
                .filter(f => a.filter(f))
-               .map(f => a.process(fs.readFileSync(path.join(dir, f), 'utf8')))
+               .map(f =>
+                  a.process(fs.readFileSync(path.join(dir, f), 'utf8'), f)
+               )
          );
       });
 

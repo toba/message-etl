@@ -53,7 +53,7 @@ export const googleVoice: Reader = {
    /**
     * Process exported file.
     */
-   process(fileText: string) {
+   process(fileText: string, _fileName: string) {
       const html = parseHTML(fileText);
       const messages = html.querySelectorAll('.hChatLog .message');
       return is.array(messages)

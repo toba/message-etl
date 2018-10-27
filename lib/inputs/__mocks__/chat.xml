@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type='text/xsl' href='MessageLog.xsl'?>
+<Log LogonName="other@trailimage.com" FirstSessionID="1" LastSessionID="26">
+   <Message Date="6/24/2003" Time="10:24:17 AM" DateTime="2003-06-24T16:24:17.396Z" SessionID="1">
+      <From>
+         <User LogonName="other@trailimage.com" FriendlyName="Other Person"/>
+      </From>
+      <To>
+         <User LogonName="self@trailimage.com" FriendlyName="Self Person"/>
+      </To>
+      <Text Style="font-family:Microsoft Sans Serif; font-weight:bold; font-style:italic; color:#008080; ">let me guess, working hard again?</Text>
+   </Message>
+   <Message Date="6/24/2003" Time="10:24:42 AM" DateTime="2003-06-24T16:24:42.102Z" SessionID="1">
+      <From>
+         <User LogonName="self@trailimage.com" FriendlyName="Self Person"/>
+      </From>
+      <To>
+         <User LogonName="other@trailimage.com" FriendlyName="Other Person"/>
+      </To>
+      <Text Style="font-family:Tahoma; color:#800080; ">yes</Text>
+   </Message>
+   <Message Date="6/24/2003" Time="10:25:54 AM" DateTime="2003-06-24T16:25:54.216Z" SessionID="1">
+      <From>
+         <User LogonName="other@trailimage.com" FriendlyName="Other Person"/>
+      </From>
+      <To>
+         <User LogonName="self@trailimage.com" FriendlyName="Self Person"/>
+      </To>
+      <Text Style="font-family:Microsoft Sans Serif; font-weight:bold; font-style:italic; color:#008080; ">Laura wearing you out yet?</Text>
+   </Message>
+   <Message Date="6/24/2003" Time="10:29:06 AM" DateTime="2003-06-24T16:29:06.953Z" SessionID="1">
+      <From>
+         <User LogonName="self@trailimage.com" FriendlyName="Self Person"/>
+      </From>
+      <To>
+         <User LogonName="other@trailimage.com" FriendlyName="Other Person"/>
+      </To>
+      <Text Style="font-family:Tahoma; color:#800080; ">sorry, been on and still on the phone</Text>
+   </Message>
+</Log>

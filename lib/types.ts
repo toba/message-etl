@@ -1,7 +1,9 @@
 export enum Source {
    FacebookMessenger,
    GoogleVoice,
-   GMail
+   GMail,
+   MicrosoftChat,
+   Passport
 }
 
 export enum Relation {
@@ -32,7 +34,7 @@ export interface Reader {
    /** Filter file list so it only includes those for the platform. */
    filter: (fileName: string) => boolean;
    /** Process an exported file. */
-   process: (fileText: string) => Message[];
+   process: (fileText: string, fileName: string) => Message[];
    /** Parse a single message from the exported file. */
    parse: (msg: any) => Message | null;
 }
@@ -51,6 +53,43 @@ export interface Person {
 }
 
 export type People = { [key: number]: Person };
+
+export namespace Chat {
+   export interface User {
+      FriendlyName: string;
+      LogonName: string;
+   }
+
+   export interface Participant {
+      User: User;
+   }
+
+   export interface Text {
+      '#text': string;
+      Style: string;
+   }
+
+   export interface Message {
+      SessionID: number;
+      Time: string;
+      Date: string;
+      DateTime: string;
+      From: Participant;
+      To: Participant;
+      Text: string;
+   }
+
+   export interface Log {
+      FirstSessionID: number;
+      LastSessionID: number;
+      LogonName: string;
+      Message: Message[];
+   }
+
+   export interface Conversation {
+      Log: Log;
+   }
+}
 
 export namespace Facebook {
    export interface Reaction {
@@ -98,5 +137,40 @@ export namespace Facebook {
       is_still_participant: boolean;
       thread_type: string;
       thread_path: string;
+   }
+}
+
+export namespace Passport {
+   export interface Message {
+      /** Content */
+      RD: string;
+      /** From */
+      RM: string;
+      /** To */
+      RO: string;
+      /** Time */
+      RT: string;
+      /** Added during processing */
+      date?: string;
+      /** Added during processing */
+      defaultFrom?: string;
+   }
+
+   /** Misspellings in original */
+   export interface Conversation {
+      ContactFirendName: string;
+      ContactLoginName: string;
+      CreateDate: string;
+      OwnerFirendName: string;
+      OwnerLoginName: string;
+      RS: Message[];
+   }
+
+   export interface History {
+      History: Conversation[];
+   }
+
+   export interface Log {
+      Historys: History;
    }
 }

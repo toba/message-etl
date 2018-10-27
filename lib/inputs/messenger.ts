@@ -2,7 +2,7 @@ import { Reader, Message, Source, Facebook, Relation } from '../types';
 import { is } from '@toba/tools';
 import { match } from '../matcher';
 
-const fileName = 'message.json';
+const exportName = 'message.json';
 
 /**
  * Reverse message encoding. This kind of odd process is necesssary to restore
@@ -53,9 +53,9 @@ function parse(msg: Facebook.Message): Message | null {
 }
 
 export const facebookMessenger: Reader = {
-   filter: (fn: string) => fn == fileName,
+   filter: (fn: string) => fn == exportName,
 
-   process(text: string) {
+   process(text: string, fileName: string) {
       const file: Facebook.Conversation = JSON.parse(text);
       let messages: Message[] = [];
 
@@ -68,7 +68,7 @@ export const facebookMessenger: Reader = {
             .filter(m => m !== null) as Message[];
          console.log(`Converted ${messages.length} Facebook messages`);
       } else {
-         console.error(`No messages found in ${fileName}`);
+         console.error(`No messages found in ${exportName}`);
       }
       return messages;
    },

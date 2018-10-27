@@ -16,7 +16,7 @@ function parse(msg: ParsedMail): Message | null {
 export const mailbox: Reader = {
    filter: (fileName: string) => re.test(fileName),
 
-   process(_text: string) {
+   process(_text: string, _fileName: string) {
       return [] as Message[];
    },
 

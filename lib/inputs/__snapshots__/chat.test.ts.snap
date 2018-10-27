@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parses file 1`] = `
+Array [
+  Object {
+    "from": 2,
+    "on": 2003-06-24T16:24:17.396Z,
+    "source": 3,
+    "text": "let me guess, working hard again?",
+  },
+  Object {
+    "from": 1,
+    "on": 2003-06-24T16:24:42.102Z,
+    "source": 3,
+    "text": "yes",
+  },
+  Object {
+    "from": 2,
+    "on": 2003-06-24T16:25:54.216Z,
+    "source": 3,
+    "text": "Laura wearing you out yet?",
+  },
+  Object {
+    "from": 1,
+    "on": 2003-06-24T16:29:06.953Z,
+    "source": 3,
+    "text": "sorry, been on and still on the phone",
+  },
+]
+`;

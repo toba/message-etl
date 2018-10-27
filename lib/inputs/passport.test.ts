@@ -24,13 +24,16 @@ test('matches file names', () => {
 
 test('parses file', async () => {
    const text = await readFileText(`${__dirname}/__mocks__/passport.xml`);
-   const messages = passport.process(text, 'mock');
+   const messages = passport.process(text, 'passport');
 
    expect(messages).toBeInstanceOf(Array);
-   expect(messages).toHaveLength(4);
-   expect(messages[0].from).toBe(Relation.Other);
-   expect(messages[1].from).toBe(Relation.Self);
-   expect(messages[3].text).toBe('sorry, been on and still on the phone');
+   expect(messages).toHaveLength(132);
+   expect(messages[0].on).toEqual(new Date(2003, 5, 2, 14, 18, 31));
+   expect(messages[0].from).toBe(Relation.Self);
+   expect(messages[2].from).toBe(Relation.Other);
+   expect(messages[3].text).toBe(
+      'i just need to make sure i type the write things in the right windows'
+   );
 
    expect(messages).toMatchSnapshot();
 });

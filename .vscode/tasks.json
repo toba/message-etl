@@ -17,7 +17,7 @@
          "command": "./node_modules/.bin/ts-node",
          "args": [
             "./lib/main.ts",
-            "\"/Volumes/GoogleDrive/My Drive/Legal/Jessica/SMS/\""
+            "\"/Volumes/GoogleDrive/My Drive/Legal/Jessica/Messages/\""
          ],
          "type": "shell",
          "problemMatcher": "$tsc"
@@ -25,7 +25,10 @@
       {
          "label": "List Production Dependencies",
          "command": "npm",
-         "args": ["ls", "-prod=true"],
+         "args": [
+            "ls",
+            "-prod=true"
+         ],
          "type": "shell",
          "presentation": {
             "echo": false,
@@ -33,6 +36,11 @@
             "focus": true,
             "panel": "shared"
          },
+         "problemMatcher": []
+      },
+      {
+         "type": "npm",
+         "script": "build",
          "problemMatcher": []
       }
    ]

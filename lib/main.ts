@@ -5,7 +5,7 @@ import { Message, Reader, Writer } from './types';
 import { fb, gv, passport, chat } from './inputs/index';
 import { text } from './outputs/index';
 
-const inputs: Reader[] = [fb, gv, passport, chat];
+const inputs: Reader[] = [passport]; //[fb, gv, passport, chat];
 const outputs: Writer[] = [text];
 
 function main(dir: string) {

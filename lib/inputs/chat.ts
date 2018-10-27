@@ -1,6 +1,6 @@
 import { Reader, Message, Source, Chat, Relation } from '../types';
 import { is } from '@toba/tools';
-import { parse as xml } from 'fast-xml-parser';
+import { parse as xml, validate } from 'fast-xml-parser';
 import { match } from '../matcher';
 
 const namePattern = /^\D+3008(@hotmail\.com|\d{8,})\.xml$/;
@@ -39,6 +39,13 @@ export const microsoftChat: Reader = {
 
    process(text: string, fileName: string) {
       let messages: Message[] = [];
+      const v = validate(text);
+
+      if (v !== true) {
+         console.error(`Unable to parse "${fileName}"`, v);
+         return messages;
+      }
+
       const log: Chat.Conversation = xml(text, {
          attributeNamePrefix: '',
          ignoreAttributes: false,

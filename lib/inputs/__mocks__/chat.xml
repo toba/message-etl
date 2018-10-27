@@ -24,7 +24,9 @@
          <User LogonName="other@trailimage.com" FriendlyName="Other Person"/>
       </From>
       <To>
-         <User LogonName="self@trailimage.com" FriendlyName="Self Person"/>
+         <User LogonName="sunflower77h@hotmail.com" FriendlyName="butterfly"/>
+         <User LogonName="self@trailimage.com" FriendlyName="Jason Abbott"/>
+         <User LogonName="momofhailey@hotmail.com" FriendlyName="don't you wish you were floating the tubes!"/>
       </To>
       <Text Style="font-family:Microsoft Sans Serif; font-weight:bold; font-style:italic; color:#008080; ">Laura wearing you out yet?</Text>
    </Message>

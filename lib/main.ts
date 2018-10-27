@@ -4,8 +4,9 @@ import { is } from '@toba/tools';
 import { Message, Reader, Writer } from './types';
 import { fb, gv, passport, chat } from './inputs/index';
 import { text } from './outputs/index';
+import { deduplicate } from './tools';
 
-const inputs: Reader[] = [passport]; //[fb, gv, passport, chat];
+const inputs: Reader[] = [fb, gv, passport, chat];
 const outputs: Writer[] = [text];
 
 function main(dir: string) {
@@ -34,6 +35,8 @@ function main(dir: string) {
                )
          );
       });
+
+      messages = deduplicate(messages);
 
       if (messages.length > 0) {
          console.log(`Parsed ${messages.length} messages`);

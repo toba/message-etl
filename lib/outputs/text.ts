@@ -1,4 +1,4 @@
-import { timeString, dateString } from '@toba/tools';
+import { timeString, dateString, is } from '@toba/tools';
 import { Message, Writer } from '../types';
 import { dayName, curlyQuotes } from '../tools';
 import { people } from '../config';
@@ -23,7 +23,11 @@ export const text: Writer = {
             day = monthDay;
             out += `\n${dayName(m.on)}, ${dateString(m.on)}\n\n`;
          }
-         out += serialize(m);
+         try {
+            out += serialize(m);
+         } catch (err) {
+            console.error(JSON.stringify(m), err);
+         }
       });
 
       return out;

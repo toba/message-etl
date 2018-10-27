@@ -75,7 +75,7 @@ export namespace Chat {
       Date: string;
       DateTime: string;
       From: Participant;
-      To: Participant;
+      To: Participant | Participant[];
       Text: string;
    }
 

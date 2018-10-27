@@ -31,7 +31,7 @@ test('parses file', async () => {
    const messages = chat.process(text, 'mock');
 
    expect(messages).toBeInstanceOf(Array);
-   expect(messages).toHaveLength(4);
+   expect(messages).toHaveLength(5);
    expect(messages[0].from).toBe(Relation.Other);
    expect(messages[1].from).toBe(Relation.Self);
    expect(messages[3].text).toBe('sorry, been on and still on the phone');

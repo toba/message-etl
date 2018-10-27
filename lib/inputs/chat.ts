@@ -3,6 +3,7 @@ import { is } from '@toba/tools';
 import { parse as xml, validate } from 'fast-xml-parser';
 import { match } from '../matcher';
 
+const matchErrors: string[] = [];
 const namePattern = /^\D+3008(@hotmail\.com|\d{8,})\.xml$/;
 const datePattern = /^[A-Za-z]+\s200(3-(1[0-2]|09)|4-\d{2})-\d{2}\s[^\.]+\.xml$/;
 
@@ -19,18 +20,22 @@ function parse(msg: Chat.Message): Message | null {
    }
 
    const from = match.name(sender);
-   const out: Message = {
+
+   if (from == Relation.None) {
+      const msg = `No relation found for "${sender}"`;
+      if (!matchErrors.includes(msg)) {
+         console.error(msg);
+         matchErrors.push(msg);
+      }
+      return null;
+   }
+
+   return {
       source: Source.MicrosoftChat,
       text: msg.Text['#text'],
       on: new Date(msg.DateTime),
       from
    };
-
-   if (from == Relation.None) {
-      console.error(`No relation found for ${sender}`);
-   }
-
-   return out;
 }
 
 export const microsoftChat: Reader = {
@@ -58,8 +63,8 @@ export const microsoftChat: Reader = {
          console.log(
             `Found ${log.Log.Message.length} Chat messages in ${fileName}`
          );
-         messages = log.Log.Message.map(m => parse(m)).filter(
-            m => m !== null
+         messages = log.Log.Message.map(m => parse(m)).filter(m =>
+            is.value(m)
          ) as Message[];
          console.log(`Converted ${messages.length} Chat messages`);
       } else {

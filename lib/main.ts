@@ -40,7 +40,10 @@ function main(dir: string) {
          console.log(`Parsed ${messages.length} messages`);
 
          messages.sort((m1, m2) => m1.on.getTime() - m2.on.getTime());
+         const before = messages.length;
          messages = deduplicate(messages);
+
+         console.log(`Removed ${before - messages.length} duplicate messages`);
 
          outputs.forEach(o => {
             console.log(`Preparing to write ${o.fileName}`);

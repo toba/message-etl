@@ -22,7 +22,7 @@ export function deduplicate(messages: Message[]): Message[] {
 
    return messages.reduce(
       (deduped: Message[], m: Message) => {
-         if (m.from != from && m.text != text) {
+         if (m.from != from || m.text != text) {
             text = m.text;
             from = m.from;
             deduped.push(m);

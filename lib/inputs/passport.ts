@@ -3,6 +3,7 @@ import { is } from '@toba/tools';
 import { parse as xml, validate } from 'fast-xml-parser';
 import { match } from '../matcher';
 
+const matchErrors: string[] = [];
 const re = /[A-Za-z]+\s2003-0[1-8]-\d{2}\s[^\.]+\.xml$/;
 
 function parse(msg: Passport.Message): Message | null {
@@ -25,7 +26,11 @@ function parse(msg: Passport.Message): Message | null {
    const from = match.name(sender);
 
    if (from == Relation.None) {
-      console.error(`No relation found for ${sender}`);
+      const msg = `No relation found for "${sender}"`;
+      if (!matchErrors.includes(msg)) {
+         console.error(msg);
+         matchErrors.push(msg);
+      }
       return null;
    }
 

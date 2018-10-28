@@ -22,7 +22,8 @@ test('matches file names', () => {
    [
       `${name} - Text - 2012-01-29T04_57_07.html`,
       `${name} - Text - 2012-01-29T04_57_07.html`,
-      `${name} - Voicemail - 2010-10-30T01_.html`
+      `${name} - Voicemail - 2010-10-30T01_.html`,
+      `${name} - Text - 2012-09-25T23_19_11.html`
    ].forEach(n => {
       expect(gv.filter(n)).toBe(true);
    });
@@ -51,13 +52,27 @@ test('parses single message', () => {
 
 test('parses file', async () => {
    const text = await readFileText(`${__dirname}/__mocks__/sms.html`);
-   const messages = gv.process(text);
+   const messages = gv.process(text, 'mock');
 
    expect(messages).toBeInstanceOf(Array);
-   expect(messages).toHaveLength(9);
+   expect(messages).toHaveLength(10);
    expect(messages[0].from).toBe(Relation.Other);
    expect(messages[1].from).toBe(Relation.Self);
    expect(messages[8].text).toBe('Superman? Home in 15');
+   expect(messages[9].text).toBe('At park for a bit, signed papers');
+
+   expect(messages).toMatchSnapshot();
+});
+
+test('parses file with single message', async () => {
+   const text = await readFileText(`${__dirname}/__mocks__/sms2.html`);
+   const messages = gv.process(text, 'shorty');
+
+   expect(messages).toBeInstanceOf(Array);
+   expect(messages).toHaveLength(1);
+   expect(messages[0].from).toBe(Relation.Other);
+   //expect(messages[0].on).toEqual(new Date(2012, 8, 25, 19, 19, 11, 272));
+   expect(messages[0].text).toBe('At park for a bit, signed papers');
 
    expect(messages).toMatchSnapshot();
 });

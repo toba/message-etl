@@ -57,5 +57,22 @@ Array [
     "source": 1,
     "text": "Superman? Home in 15",
   },
+  Object {
+    "from": 2,
+    "on": 2012-09-25T23:19:11.272Z,
+    "source": 1,
+    "text": "At park for a bit, signed papers",
+  },
+]
+`;
+
+exports[`parses file with single message 1`] = `
+Array [
+  Object {
+    "from": 2,
+    "on": 2012-09-25T23:19:11.272Z,
+    "source": 1,
+    "text": "At park for a bit, signed papers",
+  },
 ]
 `;

@@ -49,7 +49,9 @@ export const text: Writer = {
 
       return (
          out +
-         `${phrase} day: ${dayAverage}${phrase} weekday: ${weekDayAverage}\n`
+         `\nTotal messages: ${messages.length}` +
+         `${phrase} day: ${dayAverage}` +
+         `${phrase} weekday: ${weekDayAverage}\n`
       );
    },
    serialize,

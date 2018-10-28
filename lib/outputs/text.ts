@@ -16,21 +16,41 @@ export const text: Writer = {
    write(messages: Message[]) {
       let out = '';
       let day = '';
+      const dayCount = [0, 0];
+      const weekDayCount = [0, 0];
 
       messages.forEach(m => {
+         const isWeekDay = [0, 6].indexOf(m.on.getDay()) == -1;
          const monthDay = `${m.on.getMonth()}-${m.on.getDate()}`;
+
          if (day != monthDay) {
             day = monthDay;
             out += `\n${dayName(m.on)}, ${dateString(m.on)}\n\n`;
+            dayCount[0]++;
+            if (isWeekDay) {
+               weekDayCount[0]++;
+            }
          }
+
          try {
             out += serialize(m);
+            dayCount[1]++;
+            if (isWeekDay) {
+               weekDayCount[1]++;
+            }
          } catch (err) {
             console.error(JSON.stringify(m), err);
          }
       });
 
-      return out;
+      const dayAverage = dayCount[1] / dayCount[0];
+      const weekDayAverage = weekDayCount[1] / weekDayCount[0];
+      const phrase = '\nAverage messages per';
+
+      return (
+         out +
+         `${phrase} day: ${dayAverage}${phrase} weekday: ${weekDayAverage}\n`
+      );
    },
    serialize,
    fileName: 'messages.txt'

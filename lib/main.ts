@@ -36,12 +36,11 @@ function main(dir: string) {
          );
       });
 
-      messages = deduplicate(messages);
-
       if (messages.length > 0) {
          console.log(`Parsed ${messages.length} messages`);
 
          messages.sort((m1, m2) => m1.on.getTime() - m2.on.getTime());
+         messages = deduplicate(messages);
 
          outputs.forEach(o => {
             console.log(`Preparing to write ${o.fileName}`);

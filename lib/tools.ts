@@ -1,6 +1,24 @@
 import { is, weekday } from '@toba/tools';
 import { Message, Relation } from './types';
 
+const moneyWords = [
+   'credit card',
+   'financ',
+   'equity',
+   'salary',
+   'money',
+   'distribution',
+   'ICCU',
+   'our account',
+   'my account',
+   'withdr[ea]w',
+   'billling',
+   'billing',
+   'checking'
+];
+
+const moneyPattern = new RegExp(`\\b(${moneyWords.join('|')})`, 'i');
+
 export const numbersOnly = (text: string | null) =>
    text !== null ? text.replace(/\D/g, '') : null;
 
@@ -32,3 +50,6 @@ export function deduplicate(messages: Message[]): Message[] {
       [] as Message[]
    );
 }
+
+export const aboutMoney = (text: string | null): boolean =>
+   is.empty(text) ? false : moneyPattern.test(text!);

@@ -1,6 +1,6 @@
-import { timeString, dateString, is } from '@toba/tools';
+import { timeString, dateString } from '@toba/tools';
 import { Message, Writer } from '../types';
-import { dayName, curlyQuotes } from '../tools';
+import { dayName, curlyQuotes, aboutMoney } from '../tools';
 import { people } from '../config';
 
 export const serialize = (m: Message): string =>
@@ -16,6 +16,7 @@ export const text: Writer = {
    write(messages: Message[]) {
       let out = '';
       let day = '';
+      let moneyCount = 0;
       const dayCount = [0, 0];
       const weekDayCount = [0, 0];
 
@@ -38,6 +39,9 @@ export const text: Writer = {
             if (isWeekDay) {
                weekDayCount[1]++;
             }
+            if (aboutMoney(m.text)) {
+               moneyCount++;
+            }
          } catch (err) {
             console.error(JSON.stringify(m), err);
          }
@@ -50,6 +54,7 @@ export const text: Writer = {
       return (
          out +
          `\nTotal messages: ${messages.length}` +
+         `\nMessages about finances: ${moneyCount}` +
          `${phrase} day: ${dayAverage}` +
          `${phrase} weekday: ${weekDayAverage}\n`
       );

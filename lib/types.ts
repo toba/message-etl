@@ -3,7 +3,8 @@ export enum Source {
    GoogleVoice,
    GMail,
    MicrosoftChat,
-   Passport
+   Passport,
+   GoogleHangouts
 }
 
 export enum Relation {
@@ -155,6 +156,7 @@ export namespace Hangouts {
    export type LeaveReason = 'LEAVE_REASON_UNKNOWN';
    export type NetworkType = 'BABEL';
    export type SegmentType = 'TEXT' | 'LINE_BREAK';
+   export type AttachmentType = 'PLUS_AUDIO_V2';
    export type View = 'INBOX_VIEW';
    export type Toggle = 'ENABLED';
    export type ParticipantType = 'GAIA' | 'OFF_NETWORK_PHONE';
@@ -171,6 +173,15 @@ export namespace Hangouts {
 
    export interface Delivery {
       medium_type: MediumType;
+   }
+
+   export interface EmbedItem {
+      type: AttachmentType[];
+   }
+
+   export interface Attachment {
+      id: string;
+      embed_item: EmbedItem;
    }
 
    export interface Participant {
@@ -203,10 +214,13 @@ export namespace Hangouts {
    }
 
    export interface Content {
-      segment: Segment[];
+      segment?: Segment[];
+      attachment?: Attachment[];
    }
 
    export interface Message {
+      /** Sender name added during processing */
+      senderName?: string;
       message_content: Content;
    }
 
@@ -251,7 +265,7 @@ export namespace Hangouts {
       is_guest: boolean;
    }
 
-   export interface Conversation {
+   export interface AboutConversation {
       id: Identifier;
       self_conversation_state: ConversationState;
       read_state: ReadState[];
@@ -260,14 +274,18 @@ export namespace Hangouts {
       participant_data: Participant[];
    }
 
-   export interface ConversationGroup {
+   export interface Conversation {
       conversation_id: Identifier;
+      conversation: AboutConversation;
+   }
+
+   export interface ConversationItem {
       conversation: Conversation;
       events: Event[];
    }
 
    export interface Export {
-      conversations: ConversationGroup[];
+      conversations: ConversationItem[];
    }
 }
 

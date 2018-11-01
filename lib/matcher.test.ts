@@ -22,3 +22,10 @@ test('matches phone', () => {
    expect(match.phone('2001234567')).toBe(Relation.Other);
    expect(match.phone('200123884567')).toBe(Relation.None);
 });
+
+test('confirms match to all relations', () => {
+   expect(match.all(['Me', 'Other'])).toBe(true);
+   expect(match.all(['Me', 'Other', 'Extra'])).toBe(true);
+   expect(match.all(['Self Person', 'Other', 'Extra'])).toBe(true);
+   expect(match.all(['Me', 'Extra'])).toBe(false);
+});

@@ -22,6 +22,20 @@ export const match = {
    /** Find person with name */
    name: (name: string | null) => compare(name, p => p.alias.includes(name!)),
 
+   /** Whether relation exists with given name */
+   exists: (name: string) =>
+      compare(name, p => p.alias.includes(name!)) != Relation.None,
+
+   /** Whether all relations are matched to names */
+   all: (names: string[]) =>
+      Object.keys(people).reduce((yes, key) => {
+         if (yes) {
+            const p: Person = people[key];
+            return p.alias.filter(a => names.includes(a)).length > 0;
+         }
+         return false;
+      }, true),
+
    /** Find person with e-mail */
    email: (email: string | null) =>
       compare(email, p => p.email.includes(email!)),

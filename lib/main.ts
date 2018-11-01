@@ -2,11 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { is } from '@toba/tools';
 import { Message, Reader, Writer } from './types';
-import { fb, gv, passport, chat } from './inputs/index';
+import { fb, gv, passport, chat, hangouts } from './inputs/index';
 import { text } from './outputs/index';
 import { deduplicate } from './tools';
 
-const inputs: Reader[] = [fb, gv, passport, chat];
+const inputs: Reader[] = [fb, gv, passport, chat, hangouts];
 const outputs: Writer[] = [text];
 
 function main(dir: string) {

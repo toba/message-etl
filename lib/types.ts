@@ -140,6 +140,137 @@ export namespace Facebook {
    }
 }
 
+export namespace Hangouts {
+   export type EventType =
+      | 'START_HANGOUT'
+      | 'END_HANGOUT'
+      | 'HANGOUT_EVENT'
+      | 'ADD_USER'
+      | 'REMOVE_USER'
+      | 'REGULAR_CHAT_MESSAGE';
+   export type ConversationType = 'GROUP' | 'STICKY_ONE_TO_ONE';
+   export type Status = 'ACTIVE';
+   export type MediumType = 'BABEL_MEDIUM' | 'GOOGLE_VOICE_MEDIUM';
+   export type NotificationLevel = 'RING';
+   export type LeaveReason = 'LEAVE_REASON_UNKNOWN';
+   export type NetworkType = 'BABEL';
+   export type SegmentType = 'TEXT' | 'LINE_BREAK';
+   export type View = 'INBOX_VIEW';
+   export type Toggle = 'ENABLED';
+   export type ParticipantType = 'GAIA' | 'OFF_NETWORK_PHONE';
+   export type InvitationStatus = 'ACCEPTED_INVITATION';
+
+   export interface Identifier {
+      id: string;
+   }
+
+   export interface User {
+      gaia_id: string;
+      chat_id: string;
+   }
+
+   export interface Delivery {
+      medium_type: MediumType;
+   }
+
+   export interface Participant {
+      id: User;
+      fallback_name: string;
+      invitation_status: InvitationStatus;
+      participant_type: ParticipantType;
+      new_invitation_status: InvitationStatus;
+      in_different_customer_as_requester: boolean;
+      domain_id: string;
+   }
+
+   export interface EventState {
+      user_id: User;
+      client_generated_id: string;
+      notification_level: NotificationLevel;
+   }
+
+   export interface Style {
+      bold: boolean;
+      italics: boolean;
+      strikethrough: boolean;
+      underline: boolean;
+   }
+
+   export interface Segment {
+      type: SegmentType;
+      text: string;
+      formatting: Style;
+   }
+
+   export interface Content {
+      segment: Segment[];
+   }
+
+   export interface Message {
+      message_content: Content;
+   }
+
+   export interface MembershipChange {
+      type: any;
+      participant_id: User;
+      leave_reason: LeaveReason;
+   }
+
+   export interface Event {
+      conversation_id: Identifier;
+      sender_id: User;
+      timestamp: string;
+      self_event_state: EventState;
+      hangout_event?: any;
+      event_id: string;
+      advances_sort_timestamp: boolean;
+      membership_change?: MembershipChange;
+      chat_message?: Message;
+      event_otr: string;
+      delivery_medium: Delivery;
+      event_type: EventType;
+      event_version: string;
+   }
+
+   export interface Message {}
+
+   export interface ReadState {
+      participant_id: User;
+      latest_read_timestamp: string;
+   }
+
+   export interface ConversationState {
+      self_read_state: ReadState;
+      status: Status;
+      notification_level: string;
+      view: View[];
+      inviter_id: User;
+      invite_timestamp: string;
+      sort_timestamp: string;
+      active_timestamp: string;
+      is_guest: boolean;
+   }
+
+   export interface Conversation {
+      id: Identifier;
+      self_conversation_state: ConversationState;
+      read_state: ReadState[];
+      has_active_hangout: boolean;
+      current_participant: User | User[];
+      participant_data: Participant[];
+   }
+
+   export interface ConversationGroup {
+      conversation_id: Identifier;
+      conversation: Conversation;
+      events: Event[];
+   }
+
+   export interface Export {
+      conversations: ConversationGroup[];
+   }
+}
+
 export namespace Passport {
    export interface Message {
       /** Content */

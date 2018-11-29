@@ -21,20 +21,20 @@
    },
    "homepage": "https://github.com/toba/message-etl#readme",
    "dependencies": {
-      "@toba/tools": "^3.12.0",
-      "fast-xml-parser": "^3.12.5",
-      "mailparser": "^2.3.4",
-      "node-html-parser": "^1.1.10",
+      "@toba/tools": "^4.1.0",
+      "fast-xml-parser": "^3.12.9",
+      "mailparser": "^2.4.3",
+      "node-html-parser": "^1.1.11",
       "node-mbox": "^1.0.0",
-      "typescript-tslint-plugin": "0.0.4"
+      "typescript-tslint-plugin": "0.1.1"
    },
    "devDependencies": {
-      "@toba/build": "^1.7.4",
-      "@toba/test": "^1.20.0",
+      "@toba/build": "^2.0.0",
+      "@toba/test": "^2.0.0",
       "@types/mailparser": "^2.0.2",
-      "prettier": "^1.14.3",
+      "prettier": "^1.15.2",
       "ts-node": "^7.0.0",
-      "typescript": "^3.0.0"
+      "typescript": "^3.1.6"
    },
    "prettier": {
       "singleQuote": true,

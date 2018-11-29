@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parses file 1`] = `
+Array [
+  Object {
+    "from": 2,
+    "on": 2018-10-16T18:12:53.381Z,
+    "source": 0,
+    "text": "Oh, I know what that means. Ok",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T18:06:50.175Z,
+    "source": 0,
+    "text": "Maybe I translated wrong. Full message: \\"Its 3160 Lewis River Rd Woodland Wa 98674 for know it will be changing when the new houses and road goes in don't when that will happen.\\"",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T18:06:27.186Z,
+    "source": 0,
+    "text": "What do you mean not in the new place?",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T18:05:57.344Z,
+    "source": 0,
+    "text": "Jessica: 󰀀",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-14T21:46:30.548Z,
+    "source": 0,
+    "text": "You sent a video.",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T17:53:18.807Z,
+    "source": 0,
+    "text": "And he spelled \\"your\\" wrong",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-13T21:12:46.225Z,
+    "source": 0,
+    "text": "You: 󰀀",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T17:53:02.725Z,
+    "source": 0,
+    "text": "Scott says the address is still 3160 Lewis River Rd. Not in the new place yet.",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T15:51:34.711Z,
+    "source": 0,
+    "text": "Rough",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T15:45:52.058Z,
+    "source": 0,
+    "text": "Went to make latte for first time ever here and we're out of milk. What a dump.",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T02:41:34.856Z,
+    "source": 0,
+    "text": "Jessica: 󰀀",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T02:41:16.405Z,
+    "source": 0,
+    "text": "Was on perch a while",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T02:41:08.688Z,
+    "source": 0,
+    "text": "Mellow",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T02:41:05.741Z,
+    "source": 0,
+    "text": "Seems to be",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T02:40:39.664Z,
+    "source": 0,
+    "text": "She feeling okay?",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T02:39:53.609Z,
+    "reaction": "😆",
+    "source": 0,
+    "text": "Cats new hiding spot",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T02:39:45.171Z,
+    "source": 0,
+    "text": "You sent a photo.",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T01:24:44.097Z,
+    "source": 0,
+    "text": "So very sad",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T01:22:48.444Z,
+    "source": 0,
+    "text": "Felt so sad going in his room to turn off the light, looking around",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T00:31:42.196Z,
+    "source": 0,
+    "text": "You: 󰀀",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T00:31:33.421Z,
+    "source": 0,
+    "text": "Oh, I know it was 3160. I'll find out",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T00:30:32.938Z,
+    "source": 0,
+    "text": "Meant as more of a question :)",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-16T00:29:29.629Z,
+    "source": 0,
+    "text": "Thanks",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T00:27:50.977Z,
+    "source": 0,
+    "text": "3170 Lewis River Rd
+Woodland, WA 98674",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-16T00:27:49.514Z,
+    "source": 0,
+    "text": "The address I have is",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T22:48:19.846Z,
+    "source": 0,
+    "text": "You: 󰀀",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-15T22:47:12.522Z,
+    "source": 0,
+    "text": "I'll be by to get Hunter around 5:30",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T22:46:15.006Z,
+    "source": 0,
+    "text": "Waiting in line for cat",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T19:56:54.962Z,
+    "source": 0,
+    "text": "yeah ...",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-15T19:56:35.761Z,
+    "source": 0,
+    "text": "no clue on the xbox, sold is probably a good bet. He can deal with Scott on that one",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T19:54:26.739Z,
+    "source": 0,
+    "text": "didn't see xbox anywhere. i guess he sold it? or I put it somewhere I totally forgot? but i don't think so. just had it in the office, locked.",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T19:53:40.098Z,
+    "source": 0,
+    "text": "checked his room. it seemed clean in the sense that there aren't clothes on the floor anymore.",
+  },
+  Object {
+    "from": 2,
+    "on": 2018-10-15T19:53:14.653Z,
+    "source": 0,
+    "text": "If he's back by 4:30 and his room is clean and he's totally packed",
+  },
+  Object {
+    "from": 1,
+    "on": 2018-10-15T19:42:55.070Z,
+    "source": 0,
+    "text": "Hunter wanting to go visit friends. I said to check with you.",
+  },
+  Object {
+    "from": 1,
+    "on": 2013-06-22T18:03:31.989Z,
+    "source": 0,
+    "text": "This is my route
+https://dl.dropboxusercontent.com/u/33199511/lava-mountain-loop.jpg",
+  },
+  Object {
+    "from": 2,
+    "on": 2013-06-11T04:27:23.625Z,
+    "source": 0,
+    "text": "Good night, sweet dreams reality is obviously not your forte.",
+  },
+  Object {
+    "from": 2,
+    "on": 2013-06-10T14:03:18.841Z,
+    "source": 0,
+    "text": "SPOILED monster.",
+  },
+  Object {
+    "from": 2,
+    "on": 2013-06-09T15:55:02.848Z,
+    "source": 0,
+    "text": "That is hilarious, we are all laughing. Hitting the road now",
+  },
+  Object {
+    "from": 2,
+    "on": 2011-02-24T04:47:01.000Z,
+    "source": 0,
+    "text": "Do you ever have those moments where somebody is so mind shatteringly selfish and horrible that it may take you a few days to even  put the right words together, because it is so unfathomable for most of the population to be that way?? Yet they think they are logical and normal?? Even though everybody around them has to put effort into tolerating being around them??? No matter what damage they cause in their wake they will NEVER change anything or say they are sorry???",
+  },
+]
+`;
